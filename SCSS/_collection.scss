@@ -1,0 +1,224 @@
+@include tablet {
+    .collection__main-inner-wrapper {
+        padding-bottom: 1rem;
+    }
+}
+
+.collection__mainwrapper {
+    max-width: 1300px;
+    margin-left: 90px;
+    padding-top: 6.5rem;
+    @include tablet {
+        margin-left: 0;
+    }
+
+    .collection__wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .collection__header-wrapper {
+            display: flex;
+            align-items: center;
+            @include collection-cards {
+                justify-content: flex-start;
+            }
+
+            .my__collection {
+                display: inline-block;
+                color:rgba(29, 33, 35, 1);
+                text-decoration: none;
+                font-size: 14px;
+                font-family:  Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                padding: .8rem;
+                border-radius: 27px;
+                font-weight: 400;
+                line-height: 1.1;
+                background: rgba(250, 205, 102, 1);
+                @include collection-cards {
+                    width: 50%;
+                    text-align: center;
+                }
+
+                &:hover {
+                    background: rgba(250, 205, 102, .8);
+                }
+            }
+
+            .collection__likes {
+                display: inline-block;
+                border: 1px solid rgba(239, 238, 224, 1);
+                color:rgba(239, 238, 224, 1);
+                padding: .7rem 1.5rem;
+                font-size: 14px;
+                margin-left: .8rem;
+                text-decoration: none;
+                line-height: 1.1;
+                font-weight: 400;
+                opacity: .25;
+                border-radius: 27px;
+                @include collection-cards {
+                    width: 50%;
+                    text-align: center;
+                }
+
+                &:hover {
+                    opacity: .6;
+                }
+            }
+        }
+
+        .collection-cards__container {
+            margin-top: 1.4rem;
+
+            .collection-cards__wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 8px;
+                @include tablet {
+                    flex-wrap: wrap;
+                }
+                @include mobileView {
+                    gap: 15px;
+                }
+
+                .collection__cards {
+                    overflow: hidden;
+                    max-width: 220px;
+                    position: relative;
+                    width: 100%;
+                    border-radius: 20px;
+                    background: transparent;
+                    @include collection-cards {
+                        width: 100%;
+                        max-width: none;
+                    }
+
+                    .collection__image {
+                        width: 100%;
+                        height: inherit;
+                        transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+                        pointer-events: visible;
+                        display: block;
+
+                        &:hover {
+                            scale: 1.20;
+                        }
+                    }
+
+                    .collection__info {
+                        position: absolute;
+                        top: 15%;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 20;
+                        display: flex;
+                        justify-content: flex-end;
+                        flex-direction: column;
+                        z-index: 0;
+                        transition: all 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+                        &:hover {
+                            top: -2%;
+                        }
+                        @include collection-hover {
+                            top: 0;
+                            &:hover {
+                                top: 0;
+                            }
+                        }
+
+                        .colletion-info__content {
+                            padding: 1rem;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            .collection__nameWrapper {
+                                display: flex;
+                                flex-direction: column;
+
+                                .collection__header {
+                                    font-size: 20px;
+                                    line-height: 1.1;
+                                    font-weight: 400;
+                                    font-family:  Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                    text-transform: capitalize;
+                                    color:rgba(239, 238, 224, 1);
+                                    margin-bottom: 3px;
+                                }
+
+                                .collection-info__name {
+                                    font-size: 10px;
+                                    line-height: 1.1;
+                                    font-weight: 300;
+                                    font-family: Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                    margin-bottom: 30px;
+                                }
+
+                                .collection-info__likes {
+                                    font-size: 10px;
+                                    line-height: 1.1;
+                                    font-weight: 300;
+                                    font-family: Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                }
+                            }
+                        }
+                    }
+
+                    .collection-cards__playWrapper {
+                        position: absolute;
+                        bottom: 26;
+                        right: 20;
+                        z-index: 300;
+                        padding: .8rem;
+                        background-color: rgba(250, 206, 102, 0.364);
+                        border-radius: 50%;
+
+                        .cards__play {
+                            display: block;
+                        }
+                    }
+                }
+
+                .collection__cards::after {
+                    content: '';
+                    background: url(/dist/Images/Play--button.png);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: auto;
+                    padding: .9rem;
+                    border-radius: 100%;
+                    width: 20px;
+                    height: 20px;
+                    bottom: 40px;
+                    right: 20px;
+                    z-index: 2;
+                    position: absolute;
+                    transition: visibility 300ms ease-in 200ms;
+                    visibility: hidden;
+                    @include collection-hover {
+                        visibility: visible;
+                    }
+                }
+
+                .collection__cards:hover::after {
+                    visibility: visible;
+                }
+
+                .cards--margin {
+                    margin-left: 24px;
+                    @include tablet {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.collection__main-inner-wrapper {
+    @include collection-cards {
+        padding: 1rem;
+    }
+}

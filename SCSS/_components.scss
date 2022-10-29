@@ -1,0 +1,305 @@
+@import 'variables';
+@import 'mixins';
+
+// header custom styling
+.mainHeader {
+    width: 100%;
+    height: 70px;
+    background-color: $mainBg;
+    position: fixed;
+    top: 0;
+    z-index: 4000;
+    // backdrop-filter: blur(10px);
+
+    .nav__main-wrapper {
+        width: inherit;
+        height: inherit;
+
+        .nav__inner-wrapper {
+            @include flex;
+            justify-content: flex-start;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 0;
+            height: 100%;
+            @include sidePadding {
+                padding: 0 4vw;
+            }
+            @include tablet {
+                justify-content: space-between;
+            }
+
+            .logo__wrapper {
+                @include flex;
+                margin-right: 3.2rem;
+                width: 70px;
+                justify-content: center;
+
+                .menu__iconWrapper {
+                    display: none;
+                    @include tablet {
+                        display: block;
+                        margin-right: 10px
+                    }
+                }
+            }
+
+            .search-input__wrapper {
+                @include flex;
+                width: 100%;
+                background-color: transparent;
+                @include tablet {
+                    display: none;
+                }
+                
+                .search-icon__wrapper {
+                    margin-right: 12px;
+
+                    .search__btn {
+                        background-color: transparent;
+                        outline: none;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+
+                .search__input {
+                    padding: 1rem;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    color: $primaryTextColor;
+                    font-size: .8rem;
+                    line-height: 1.1;
+                    cursor: text;
+                    font-family: Quicksand-Musica, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+            }
+
+            .mobile-search-icon__wrapper {
+                display: none;
+                @include tablet {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.album--charts-mainHeader {
+    background: transparent;
+}
+
+// sidebar custom styling
+.sidebar__container {
+    width: 56px;
+    background-color: transparent;
+    height: 360px;
+    position: fixed;
+    top: 80px;
+    z-index: 4000;
+    @include tablet {
+        display: none;
+    }
+
+    .sidebar__innerWrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        // gap: 1.4rem;
+
+        .top-sidebar__wrapper {
+            background-color: $sidebarBg;
+            width: 100%;
+            // height: 30%;
+            border-radius: 40px;
+            @include flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.3rem 0 1.6rem;
+            // gap: 2%;
+
+            .top-side-icon__wrapper {
+                display: block;
+            }
+        }
+
+        .lower-sidebar__wrapper {
+            background-color: $sidebarBg;
+            width: 100%;
+            // height: 18%;
+            border-radius: 40px;
+            @include flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.6rem 0;
+            margin-top: 9px;
+            // gap: 2%;
+        }
+
+        .sidebar--margin {
+            margin-top: 20px;
+        }
+    }
+}
+
+// playmode styling
+.play-mode__outerWrapper {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    backdrop-filter: blur(10px);
+    background: rgba(16, 16, 16, 0.81);
+    z-index: 4000;
+
+    .play__mode {
+        max-width: 1400px;
+        margin: 0 auto;
+        height: 100%;
+        @include sidePadding {
+            padding: 0 4vw;
+        }
+
+        .play__mode-Wrapper {
+            max-width: 1300px;
+            margin-left: 90px;
+            padding: 1rem 0;
+            display: grid;
+            grid-template-columns: 10% 60% 16%;
+            gap: 2%;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            @include tablet {
+                margin-left: 0;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .play__modeArtistWrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .james__image {
+                    display: flex;
+                    align-items: center;
+                    // width: 100%;
+                }
+
+                .artist__info {
+                    margin-left: 5px;
+                    display: flex;
+                    gap: 10px;
+                    flex-direction: column;
+
+                    .track__title {
+                        font-size: 12px;
+                        word-wrap: normal;
+                        line-height: 1.1;
+                        font-weight: 600;
+                        font-family:  Quicksand-Musica, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    }
+
+                    .track-artiste__name {
+                        font-size: 0.615rem;
+                        color:rgba(255, 255, 255, 0.44);
+                        line-height: 1;
+                        font-family:  Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    }
+                }
+            }
+
+            .play__section {
+                @include flex;
+                flex-direction: column;
+                @include tablet {
+                    display: none;
+                }
+
+                .play__section-upper {
+                    @include flex;
+                    justify-content: center;
+                    width: 100%;
+                    margin-bottom: .3rem;
+
+                    .play-section__elements {
+                        margin: 0 25px;
+                        padding: .8rem;
+                    }
+
+                    .play--border-radius {
+                        background-color:rgba(250, 205, 102, 1);
+                        border-radius: 50%;
+                        box-shadow: 0 0 50px #fff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                
+                .play__movement-wrapper {
+                    width: 100%;
+                }
+            }
+
+            .volume__wrapper {
+                @include flex;
+                @include tablet {
+                    display: none;
+                }
+
+                .volume-icon__wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .volume-degree__wrapper {
+                    margin-left: 8px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .volume__degree {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .mobile-playForward__wrapper {
+                display: none;
+                @include tablet {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-left: auto;
+                }
+
+                .play__wrapper {
+                    background-color: rgb(250 205 102);
+                    border-radius: 50%;
+                    box-shadow: 0 0 50px #fff;
+                    padding: .7rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .next__wrapper {
+                    margin-left: 19px;
+                }
+            }
+        }
+    }
+}
+
+.collection--displayNone {
+    @include tablet {
+        display: none;
+    }
+}

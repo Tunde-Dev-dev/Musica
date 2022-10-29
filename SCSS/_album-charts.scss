@@ -1,0 +1,305 @@
+.album__charts-body {
+    background-image: url(/dist/Images/album--bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.main-Container {
+    width: 100%;
+    position: relative;
+
+    .charts-main__InnerWrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-bottom: 7rem;
+        @include sidePadding {
+            padding: 0 4vw;
+            padding-bottom: 7rem;
+        }
+        @include tablet {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.album__charts-hero-section {
+    max-width: 1300px;
+    margin-left: 90px;
+    padding-top: 5rem;
+    display:flex;
+    justify-content: flex-start;
+    @include tablet {
+        margin-left: 0;
+    }
+    @include album-hero {
+        flex-direction: column;
+    }
+
+
+
+    .album__charts-hero-imageWrapper {
+        width: 18rem;
+        @include album-hero {
+            width: 100%;
+            margin-bottom: 14px;
+        }
+
+        .album__lead-image {
+            width: 100%;
+            border-radius: 35px;
+        }
+    }
+
+    .album__charts-contentContainer {
+        margin-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 2rem;
+        @include album-hero {
+            margin: 0;
+        }
+
+        .album__charts-contentHeader {
+            font-size: 2.1675rem;
+            color:#A4C7C6;
+            font-weight: 600;
+            line-height: 1.2;
+            font-family: Quicksand-Musica, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 1.1rem;
+        }
+
+        .album__mainContentWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin-bottom: 2.4rem;
+
+            .album__charts-content {
+                font-size: .8rem;
+                line-height: 1.1;
+                font-weight: 400;
+                font-family: Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: rgba(239, 238, 224, 1);
+                max-width: 525px;
+                margin-bottom: .7rem;
+            }
+
+            .album__timeframe {
+                font-size: .8rem;
+                font-family: 400;
+                font-family: Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.1;
+                color: rgba(239, 238, 224, 1);
+            }
+        }
+
+        .play-and-collection__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .add__collection--margin {
+                margin-left: .7rem;
+            }
+        }
+
+        .play-and-collection__wrapper {
+            gap: 1px;
+            @include mobileView {
+                width: 100%;
+            }
+
+            .playall__wrapper {
+                @include flex;
+                padding: .7rem;
+                border-radius: 32px;
+                background: rgba(255, 255, 255, 0.07);
+                text-decoration: none;
+                cursor: pointer;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.09);
+                }
+            }
+
+            .add-to-collection__wrapper {
+                @extend .playall__wrapper;
+            }
+
+            .like__wrapper  {
+                @extend .playall__wrapper;
+
+                .like__content {
+                    display: none;
+                    @include mobileView {
+                        display: block;
+                        margin-left: 6px;
+                        color: $primaryTextColor;
+                        font-size: 12px;
+                        line-height: 1.1;
+                        font-weight: 400;
+                        font-family: Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    }
+                }
+            }
+
+            .playall__content {
+                margin-left: 10px;
+                font-size: 12px;
+                font-family:  Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.1;
+                font-weight: 400;
+                color:rgba(255, 255, 255, 1);
+            }
+        }
+    }
+}
+
+.album__tracklistsContainer {
+    max-width: 1300px;
+    margin-left: 90px;
+    padding-top: 1rem;
+    padding-top: 4rem;
+    @include tablet {
+        margin-left: 0;
+    }
+
+    .album__tracklist-wrapper {
+        width: 100%;
+
+        .album__tracklist-mainWrapper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            .album__tracklists {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+                padding: 1rem;
+                background: rgba(51, 55, 59, 0.37);
+                border-radius: 20px;
+                margin-bottom: 10px;
+                text-decoration: none;
+                gap: 1%;
+                @include tablet {
+                    justify-content: flex-start;
+                }
+
+                &:hover {
+                    background: rgba(51, 55, 59, 0.11);
+                }
+
+                .album__tracklist-image-wrapper {
+                    @include flex;
+                    max-width: 120px;
+
+                    .album__tracklist-icon-wrapper {
+                        margin-left: 10px;
+                    }
+                }
+
+                .album__tracklist-name-wrapper {
+                    width: 17%;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    @include tablet {
+                        margin-left: 10px;
+                        width: 60%;
+                        margin-right: auto;
+                    }
+
+                    .tracklist__name {
+                        font-size: 12px;
+                        color: $primaryTextColor;
+                        font-weight: 400;
+                        font-family: Quicksand-Musica, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        line-height: 1.2;
+                    }
+
+                    .name__discography {
+                        display: none;
+                        @include tablet {
+                            display: block;
+                            color: $primaryTextColor;
+                            font-size: 10px;
+                            font-family: Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        }
+                    }
+
+                }
+
+                .album__discography {
+                    width: 36%;
+                    text-align: center;
+                    @include tablet {
+                        display: none;
+                    }
+
+                    .discography__content {
+                        font-size: 12px;
+                        color: $primaryTextColor;
+                        font-weight: 400;
+                        font-family: Quicksand-Musica, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        line-height: 1.2;
+                    }
+                }
+
+                .album__tracklist-length {
+                    width: 21%;
+                    @include flex;
+                    justify-content: center;
+                    text-align: center;
+                    @include tablet {
+                        display: none;
+                    }
+
+                    .album__tracklist-time {
+                        text-align: end;
+                        font-size: 12px;
+                        color: $primaryTextColor;
+                        font-weight: 400;
+                        font-family: Quicksand-Musica, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        line-height: 1.2;
+                    }
+                }
+
+                .album__options-wrapper {
+                    display: flex;
+                    // flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 10%;
+                    @include tablet {
+                        flex-direction: column;
+                        align-items: flex-end;
+                    }
+
+                    .option__length {
+                        display: none;
+                        @include tablet {
+                            display: block;
+                            color: $primaryTextColor;
+                            font-size: 10px;
+                            font-family: Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.album-playMode--displayNone {
+    @include tablet {
+        display: none;
+    }
+}

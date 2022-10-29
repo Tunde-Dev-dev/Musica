@@ -1,0 +1,52 @@
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
+@mixin sidePadding {
+    @media (max-width: $sidePadding) {
+        @content;
+    }
+}
+
+@mixin hero-section {
+    @media (max-width: $hero-section) {
+        @content;
+    }
+}
+
+@mixin hero-section__mobile {
+    @media (max-width: $hero-section__mobile) {
+        @content
+    }
+}
+
+@mixin mobileView {
+    @media (max-width: $mobile) {
+        @content
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content
+    }
+}
+
+@mixin album-hero {
+    @media (max-width: $album-hero) {
+        @content
+    }
+}
+
+@mixin collection-cards {
+    @media (max-width: $collection-cards) {
+        @content
+    }
+}
+
+@mixin collection-hover {
+    @media (max-width: $collection-hover) {
+        @content
+    }
+}
